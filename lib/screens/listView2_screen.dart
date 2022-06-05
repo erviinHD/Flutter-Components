@@ -21,10 +21,7 @@ class Listview2Screen extends StatelessWidget {
                     Icons.arrow_forward_ios,
                     color: Colors.deepPurple,
                   ),
-                  onTap: () {
-                    final hero = options[index];
-                    print(hero);
-                  },
+                  onTap: () {},
                 ),
             separatorBuilder: (_, __) => const Divider(),
             itemCount: options.length));
