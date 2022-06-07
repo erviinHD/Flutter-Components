@@ -26,8 +26,8 @@ class CustomCardType2 extends StatelessWidget {
           if (nameCard != null)
             Container(
                 alignment: AlignmentDirectional.centerEnd,
-                child: Text(nameCard!),
-                padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10)),
+                padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),
+                child: Text(nameCard!)),
         ],
       ),
     );
