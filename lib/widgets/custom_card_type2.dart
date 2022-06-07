@@ -2,8 +2,10 @@ import 'package:fl_components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomCardType2 extends StatelessWidget {
-  const CustomCardType2({Key? key}) : super(key: key);
-
+  const CustomCardType2({Key? key, required this.imgUrl, this.nameCard})
+      : super(key: key);
+  final String imgUrl;
+  final String? nameCard;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -13,19 +15,19 @@ class CustomCardType2 extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Column(
         children: [
-          const FadeInImage(
-            image: NetworkImage(
-                'https://www.cinemascomics.com/wp-content/uploads/2022/03/Moon-Knight-no-estara-en-el-UCM.jpg'),
-            placeholder: AssetImage('assets/jar-loading.gif'),
+          FadeInImage(
+            image: NetworkImage(imgUrl),
+            placeholder: const AssetImage('assets/jar-loading.gif'),
             width: double.infinity,
             height: 250,
             fit: BoxFit.cover,
-            fadeInDuration: Duration(milliseconds: 300),
+            fadeInDuration: const Duration(milliseconds: 300),
           ),
-          Container(
-              alignment: AlignmentDirectional.centerEnd,
-              child: Text('Awesome land'),
-              padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10)),
+          if (nameCard != null)
+            Container(
+                alignment: AlignmentDirectional.centerEnd,
+                child: Text(nameCard!),
+                padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10)),
         ],
       ),
     );
